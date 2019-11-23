@@ -1,0 +1,22 @@
+/* pages/products/products.wxss */
+
+.btn{
+  display:flex;
+}
+
+.products-list{
+  margin: 30px;
+}
+
+.products-card{
+  margin:10px 0;
+}
+
+.summary{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #f0f0f0;
+  padding: 20px 15px;
+}

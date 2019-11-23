@@ -1,0 +1,39 @@
+<view wx:if="{{ currentUser }}">
+  <view>当前登录用户
+  {{ currentUser.nickname || currentUser._username}}
+  </view>
+  <view>当前积分：{{ currentUser._attribute.points }}
+  </view>
+  <button bindtap="onLogout">登出</button>
+  <navigator url="/pages/orders/orders" open-type="switchTab">查看我的订单</navigator>
+</view>
+
+<view wx:else>
+  <view wx:if="{{ state == 'register' }}">
+  <view>请输入用户名和密码注册</view>
+    <form bindsubmit="onRegister">
+      <view>用户名</view>
+      <input name="username" placeholder="请输入用户名"></input>
+      <view>密码</view>
+      <input name="password" type="password"></input>
+      <button formType="submit">注册</button>
+      <view bindtap="changeState">已经注册？去登录</view>
+    </form>
+  </view>
+
+  <view wx:if="{{ state == 'login' }}">
+    <form bindsubmit="onLogin">
+    <view>用户名</view>
+    <input name="username" placeholder="请输入用户名"></input>
+    <view>密码</view>
+    <input name="password" type="password"></input>
+    <button formType="submit">登录</button>
+    <view bindtap="changeState">新用户？去注册</view>
+  </form>
+  </view>
+
+  <button open-type="getUserInfo" 
+  bindgetuserinfo="userInfoHandler">微信 Login</button>
+
+</view>
+

@@ -1,0 +1,40 @@
+<!--pages/show/show.wxml-->
+<view class="background">
+  <view class="res-name">{{ restaurant.name }}</view>
+  <view class="res-des">{{ restaurant.description }}</view>
+
+  
+
+  <view class="add-review">菜单列表</view>
+    <view class="menu" wx:for="{{ meals }}" wx:for-item="meal">
+      <image class="img" src="{{ meal.photo }}"></image>
+      <view wx:if="{{ meal.price > 0}}">
+        <view>{{ meal.name }}</view> 
+        <view>{{ meal.price }}</view>
+        <view>购买可得积分：{{ meal.points }}</view>
+      </view>
+      <view wx:else>
+        <view>{{ meal.name }}</view> 
+        <view>{{ -meal.points }}积分兑换</view>
+      </view>
+        <button style="width:15px" bindtap="onSumbitOrder" data-id="{{ meal.id }}" data-points="{{ meal.points }}">
+          <text wx:if="{{ meal.price > 0}}">下单</text>
+          <text wx:else>兑换</text>
+        </button>
+    </view>
+ 
+  <view class="add-review">餐厅评论</view>
+    <view wx:for="{{ reviews }}" wx:for-item="review">
+      <text>{{ review.content }} {{ review.rating }}</text>
+    </view>
+
+  <view class="add-review">添加评论</view>
+    <form bindsubmit="onSubmitReview">
+      <input name="content" placeholder="请输入评论内容"></input>
+      <picker mode="selector" range="{{ ratingValues }}" bindchange="onChangeRating">
+      评分：{{ rating }} 
+      </picker>
+      <button class="btn-comments" formType="submit">提交评论</button>
+  </form>
+
+</view>

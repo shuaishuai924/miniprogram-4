@@ -1,0 +1,22 @@
+/* pages/products/products.wxss */
+.products-list{
+  padding: 20px;
+}
+
+.product-price{
+  color: red;
+  font-weight: bold;
+}
+
+.actions{
+  display: flex;
+}
+
+.summary{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #f0f0f0;
+  padding: 20px 15px;
+}

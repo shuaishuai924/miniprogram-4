@@ -1,0 +1,22 @@
+.res-name{
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.res-desc{
+  font-size: 16px;
+  color:pink;
+}
+
+.restaurants-list{
+  justify-content: center;
+  text-align: center;
+}
+
+.card-product-infos{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin:5px;
+  padding:20px;
+  background-image: url("https://s3.envato.com/files/77619303/IMG_560.jpg")
+}

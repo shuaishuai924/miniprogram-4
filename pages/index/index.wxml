@@ -1,0 +1,11 @@
+<view class="restaurants-list">
+<text>餐厅列表</text>
+  <view class="card-product-infos" wx:for="{{ restaurants }}" wx:for-item="item">
+    <view class="res-name" 
+      bindtap="onClick" 
+      data-id="{{ item.id }}"
+    >{{ item.name }}</view>
+    
+    <view class="res-desc">{{ item.description }}</view>
+  </view>
+</view>

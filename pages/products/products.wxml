@@ -1,0 +1,15 @@
+<!--pages/products/products.wxml-->
+  <view class="products-list">
+    <text>查看我的购物车</text>
+      <view class="products-card" wx:for="{{ products }}" wx:for-item="item">
+        <view class="" data-id="{{ item.id }}">{{ item.name }}</view>
+        <view class="">{{ item.des }}</view>
+        <view class="">¥{{ item.price }}</view>
+        <view class="btn">
+          <button data-id="{{ item.id }}" bindtap="onMinus">-</button>
+          <text>{{ item.quantity || 0 }}</text>
+          <button data-id="{{ item.id }}" bindtap="onAdd">+</button>
+        </view>    
+      </view>
+      <view class="summary">总价：¥{{ totalPrice }}</view>
+</view>

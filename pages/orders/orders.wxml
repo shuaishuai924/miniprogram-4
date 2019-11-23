@@ -1,0 +1,7 @@
+<!--pages/orders/orders.wxml-->
+<view wx:for="{{ orders }}" wx:for-item="order">
+  <view class="order"></view>
+  <image style="width: 100px;height: 100px" src="{{ order.meal_id.photo }}" mode="aspectFill"></image>
+  <view>{{ order.meal_id.name }}</view>
+  <view class="order">${{ order.meal_id.price}}</view>
+</view>
